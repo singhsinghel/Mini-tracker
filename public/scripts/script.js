@@ -15,8 +15,10 @@ if(navigator.geolocation){
     }
 )
 }
-
-const map=L.map('map').setView([0,0],16); 
+else {
+    console.error('Geolocation is not supported by this browser.');
+}
+const map=L.map('map').setView([0,0],17); 
 //L is an instance of leafnote. L.map('map') asks for permission of location. setView sets the coordinates and zoom
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
